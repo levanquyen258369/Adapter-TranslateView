@@ -1,0 +1,112 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>TranslatebyMe</title>
+  <base href="/">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="icon" type="image/x-icon" href="favicon.ico">
+  <script rel="stylesheet" src="https://cdn.materialdesignicons.com/6.5.95/css/materialdesignicons.min.css"></script>
+  <link rel="icon" type="image/x-icon" href="favicon.ico">
+  <!-- toastify.js -->
+  <script rel="stylesheet" src="https://cdnjs.cloudflare.com/ajax/libs/toastify-js/1.11.2/toastify.min.css"></script>
+  <script src="https://cdn.tailwindcss.com" rel="stylesheet"></script>
+</head>
+<body class="h-screen overflow-hidden flex items-center justify-center " style="background-color: rgb(219 234 254)">
+  <app-root>
+
+  </app-root>
+
+  <script>
+    function appInit() {
+      new ClipboardJS('#copy-translation');
+    }
+
+    async function translation(sourceText) {
+      if (sourceText) {
+        if (sourceText.length > 0 && sourceText.length < 5001) {
+          return await translate(sourceText, {
+            from: 'en',
+            to: 'tr',
+            cache: 60 * 60 * 24
+          });
+        }
+      }
+
+      return 'Translation';
+    }
+
+    const apps = [{
+      icon: "https://cdn-icons-png.flaticon.com/512/2965/2965306.png",
+      name: "Gmail",
+    },
+      {
+        icon: "https://cdn-icons-png.flaticon.com/512/2965/2965278.png",
+        name: "Search",
+      },
+      {
+        icon: "https://cdn-icons-png.flaticon.com/512/2965/2965363.png",
+        name: "Youtube",
+      },
+      {
+        icon: "https://cdn-icons-png.flaticon.com/512/2965/2965283.png",
+        name: "Translate",
+      },
+      {
+        icon: "https://cdn-icons-png.flaticon.com/512/2965/2965311.png",
+        name: "Photos",
+      },
+      {
+        icon: "https://cdn-icons-png.flaticon.com/512/2965/2965293.png",
+        name: "Calendar",
+      },
+      {
+        icon: "https://cdn-icons-png.flaticon.com/512/2965/2965323.png",
+        name: "Drive",
+      },
+      {
+        icon: "https://cdn-icons-png.flaticon.com/512/2965/2965281.png",
+        name: "Maps",
+      },
+      {
+        icon: "https://cdn-icons-png.flaticon.com/512/2965/2965274.png",
+        name: "Hangouts",
+      },
+      {
+        icon: "https://cdn-icons-png.flaticon.com/512/2965/2965358.png",
+        name: "Keep",
+      },
+      {
+        icon: "https://cdn-icons-png.flaticon.com/512/2965/2965317.png",
+        name: "Adwords",
+      },
+      {
+        icon: "https://cdn-icons-png.flaticon.com/512/2965/2965327.png",
+        name: "Sheets",
+      },
+      {
+        icon: "https://cdn-icons-png.flaticon.com/512/2965/2965330.png",
+        name: "Business",
+      },
+      {
+        icon: "https://cdn-icons-png.flaticon.com/512/2965/2965360.png",
+        name: "Forms",
+      },
+      {
+        icon: "https://cdn-icons-png.flaticon.com/512/2965/2965297.png",
+        name: "News",
+      },
+    ];
+  </script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/toastify-js/1.11.2/toastify.min.js"></script>
+
+  <!-- AlpineJS -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/alpinejs/3.8.1/cdn.min.js" defer></script>
+
+  <!-- translate.js -->
+  <script src="https://cdn.jsdelivr.net/npm/translate@1/translate.min.js"></script>
+
+  <!-- clipboard.js -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/clipboard.js/2.0.10/clipboard.min.js"></script>
+</body>
+</html>
