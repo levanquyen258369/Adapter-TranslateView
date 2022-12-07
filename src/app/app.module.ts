@@ -1,14 +1,12 @@
-import {enableProdMode, NgModule } from '@angular/core';
+import { NgModule } from '@angular/core';
 import { FormsModule,ReactiveFormsModule } from '@angular/forms';
 import { BrowserModule } from '@angular/platform-browser';
+
+import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import {ConvertComponent} from './convert/convert.component';
+import { ConvertComponent } from './convert/convert.component';
 import {HttpClientModule} from '@angular/common/http';
-import {AppRoutingModule} from './app-routing.module';
-
-
-
-
+import { RouterModule, Routes } from '@angular/router';
 @NgModule({
   declarations: [
     AppComponent,
@@ -19,7 +17,7 @@ import {AppRoutingModule} from './app-routing.module';
     AppRoutingModule,
     FormsModule,
     HttpClientModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
   ],
   providers: [],
   bootstrap: [AppComponent]

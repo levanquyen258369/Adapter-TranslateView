@@ -17,7 +17,7 @@ import java.util.Map;
 
 @RestController
 @RequiredArgsConstructor
-@CrossOrigin(origins = "htpp://localhost:4200", maxAge = 3600)
+@CrossOrigin(origins = "http://localhost:4200")
 @RequestMapping(Contansts.Api.Path.PREFIX + "/convert")
 public class ConvertController {
     private final ConvertAdapter trans;
@@ -29,8 +29,10 @@ public class ConvertController {
         convertList.add("Base64");
         convertList.add("Hex");
         convertList.add("Byte");
+        convertList.add("Image");
     }
     ///Gọi xem danh sách
+    @CrossOrigin(origins = "http://localhost:4200")
     @GetMapping("/listconvert")
     ResponseEntity<Object> getConvertList() {
         return ResponseEntity.ok().body(convertList);
@@ -42,6 +44,7 @@ public class ConvertController {
         return ResponseEntity.status(HttpStatus.BAD_REQUEST).body(ex.getLocalizedMessage());
     }
     //Chuyển đổi dữ liệu
+    @CrossOrigin(origins = "http://localhost:4200")
     @PostMapping(value = "/{from}/{to}")
     ResponseEntity<Object> convert(@PathVariable(value = "from") String from, @PathVariable(value = "to") String to, @RequestBody TransRequest transRequest) throws DecoderException {
         String textData = transRequest.getData();
@@ -72,6 +75,7 @@ public class ConvertController {
                     result = trans.convertStringToHexa(textData);
                 }
             }break;
+
             default:
                 throw  new CodecException("Loại dữ liệu cần chuyển đổi, hiện tại không hợp lệ !");
         }

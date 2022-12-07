@@ -47,5 +47,14 @@ header i::before {
   font-size: 30px;
 }
 
+.tieu-de{
+  text-align: center;
+}
+
+body{
+  background-image: url(../../assets/image/622.jpg);
+  background-color: aquamarine;
+}
+
 
 
