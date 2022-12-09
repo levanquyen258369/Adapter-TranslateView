@@ -6,5 +6,5 @@ import org.apache.commons.codec.DecoderException;
 //H: Kiểu Mã Hóa
 public interface Convert <P, H>{
     P encode(H text);
-    P decode(H encode) throws DecoderException;
+    P decode(H encode) throws Exception;
 }

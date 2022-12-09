@@ -10,11 +10,11 @@ public class Bytes implements Convert<byte[], String> {
     public byte[] encode(String text) {
         byte[] output = text.getBytes(StandardCharsets.UTF_8);
         String base64encoded = Base64.getEncoder().encodeToString(output);
-        return output;
+        return base64encoded.getBytes();
     }
 
     @Override
-    public byte[] decode(String encode) throws DecoderException {
+    public byte[] decode(String encode) throws Exception {
         byte[] output = encode.getBytes(StandardCharsets.UTF_8);
         byte[] base64encoded = Base64.getDecoder().decode(encode);
         return output;
