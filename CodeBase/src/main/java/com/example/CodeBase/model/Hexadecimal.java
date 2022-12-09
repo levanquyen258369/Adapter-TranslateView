@@ -17,7 +17,7 @@ public class Hexadecimal implements Convert<String, String>{
     }
 
     @Override
-    public String decode(String encode) throws DecoderException {
+    public String decode(String encode) throws Exception {
         byte[] outBytes = Hex.decodeHex(encode);
         return new String(outBytes);
     }
